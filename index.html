@@ -1,32 +1,675 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Privacy Policy - GramanDev Games</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy policy for GramanDev mobile games, including Kitty Fusion and Claws of Honor.">
+  <title>Privacy Policy - GramanDev Game Studio</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070707;
+      --panel: #111111;
+      --panel-soft: #191714;
+      --text: #f5f1e8;
+      --muted: #b9aea0;
+      --line: rgba(255, 255, 255, 0.12);
+      --gold: #f4b64a;
+      --gold-soft: rgba(244, 182, 74, 0.14);
+      --red: #8e2319;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(142, 35, 25, 0.28), transparent 34rem),
+        radial-gradient(circle at 85% 5%, rgba(244, 182, 74, 0.18), transparent 28rem),
+        linear-gradient(180deg, #050505 0%, var(--bg) 48%, #0d0a08 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7, 7, 7, 0.78);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 152px;
+      height: 46px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .brand-title {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav-link {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 15px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .language-select {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 36px 0 14px;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.06);
+      cursor: pointer;
+    }
+
+    .language-select option {
+      color: #111111;
+      background: #ffffff;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      width: min(100% - 40px, var(--max));
+      min-height: calc(100vh - 76px);
+      margin: 0 auto;
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+      align-items: center;
+      gap: 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(2.7rem, 7vw, 6.6rem);
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 660px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.22rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 12px 19px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, #ffd47b 0%, var(--gold) 46%, #b66a18 100%);
+      color: #17100a;
+    }
+
+    .button-secondary {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 470px;
+    }
+
+    .game-icon {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 26%;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.48);
+      object-fit: cover;
+    }
+
+    .game-icon.primary {
+      width: min(78%, 430px);
+      right: 0;
+      top: 8px;
+    }
+
+    .game-icon.secondary {
+      width: min(46%, 245px);
+      left: 0;
+      bottom: 8px;
+    }
+
+    .studio-band {
+      border-block: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .studio-inner {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+      padding: 34px 0;
+      display: grid;
+      grid-template-columns: 0.85fr 1fr;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .studio-logo {
+      width: 100%;
+      max-height: 170px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .studio-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .section {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+      padding: 76px 0;
+    }
+
+    .section-title {
+      margin: 0 0 24px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.05;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .game-card,
+    .policy-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .game-card {
+      min-height: 220px;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 116px minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    .game-card img {
+      width: 116px;
+      aspect-ratio: 1;
+      border-radius: 24%;
+      object-fit: cover;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+    }
+
+    .game-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.28rem;
+      line-height: 1.15;
+    }
+
+    .game-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .policy-card {
+      padding: clamp(24px, 5vw, 46px);
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 44px;
+    }
+
+    .policy-summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .policy-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .policy-item {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .policy-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .policy-item h3 {
+      margin: 0 0 6px;
+      color: var(--gold);
+      font-size: 0.98rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .policy-item p,
+    .policy-item ul {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .policy-item ul {
+      padding-left: 20px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      background: #050505;
+    }
+
+    .footer-inner {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+      padding: 26px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .studio-inner,
+      .policy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 48px;
+        gap: 30px;
+      }
+
+      .hero-art {
+        min-height: 380px;
+      }
+
+      .studio-logo {
+        max-height: 120px;
+      }
+
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav,
+      .hero,
+      .studio-inner,
+      .section,
+      .footer-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav {
+        align-items: flex-start;
+      }
+
+      .nav-actions {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .brand {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .brand-mark {
+        width: 126px;
+        height: 38px;
+      }
+
+      .brand-title {
+        font-size: 0.72rem;
+        white-space: normal;
+      }
+
+      .nav-link {
+        padding: 8px 12px;
+        font-size: 0.82rem;
+      }
+
+      .language-select {
+        min-height: 36px;
+        max-width: 126px;
+        font-size: 0.82rem;
+      }
+
+      .hero-art {
+        min-height: 305px;
+      }
+
+      .game-icon.primary {
+        width: 74%;
+      }
+
+      .game-icon.secondary {
+        width: 42%;
+      }
+
+      .game-card {
+        grid-template-columns: 84px minmax(0, 1fr);
+        gap: 16px;
+        padding: 18px;
+      }
+
+      .game-card img {
+        width: 84px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="brand">
+        <img class="brand-mark" src="assets/gramandev-studio-logo.png" alt="GraMan Dev Game Studio">
+        <p class="brand-title" data-i18n="brandTitle">Privacy Center</p>
+      </div>
+      <div class="nav-actions">
+        <select class="language-select" id="language-select" aria-label="Language selector">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+        <a class="nav-link" href="#policy" data-i18n="navPolicy">Policy</a>
+      </div>
+    </nav>
+  </header>
 
-<h1>Privacy Policy</h1>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow" data-i18n="studioName">GraManDev Game Studio</p>
+        <h1 id="page-title" data-i18n="pageTitle">Privacy Policy</h1>
+        <p class="lead" data-i18n="heroLead">
+          This privacy policy applies to mobile games published by GramanDev,
+          including Kitty Fusion and Claws of Honor.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#policy" data-i18n="readPolicy">Read policy</a>
+          <a class="button button-secondary" href="#games" data-i18n="viewGames">View games</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Featured game artwork">
+        <img class="game-icon primary" src="assets/claws-of-honor-icon.png" alt="Claws of Honor app icon">
+        <img class="game-icon secondary" src="assets/kitty-fusion-icon.png" alt="Kitty Fusion app icon">
+      </div>
+    </section>
 
-<p><strong>GramanDev Games</strong></p>
-<p>
-This privacy policy applies to mobile games published by GramanDev,
-including Kitty Fusion and Claws of Honor.
-</p>
+    <section class="studio-band" aria-label="Studio information">
+      <div class="studio-inner">
+        <img class="studio-logo" src="assets/gramandev-studio-logo.png" alt="GraMan Dev Game Studio logo">
+        <p class="studio-copy" data-i18n="studioCopy">
+          We build mobile games with clear privacy expectations. Our policy is written
+          to explain what the games do, what third-party services may process, and how
+          advertising data is used.
+        </p>
+      </div>
+    </section>
 
-<p>This application does not collect personally identifiable information.</p>
+    <section id="games" class="section" aria-labelledby="games-title">
+      <h2 id="games-title" class="section-title" data-i18n="gamesTitle">Games Covered</h2>
+      <div class="games-grid">
+        <article class="game-card">
+          <img src="assets/kitty-fusion-icon.png" alt="Kitty Fusion app icon">
+          <div>
+            <h3>Kitty Fusion</h3>
+            <p data-i18n="gameDescription">Mobile game published by GramanDev and covered by this privacy policy.</p>
+          </div>
+        </article>
+        <article class="game-card">
+          <img src="assets/claws-of-honor-icon.png" alt="Claws of Honor app icon">
+          <div>
+            <h3>Claws of Honor</h3>
+            <p data-i18n="gameDescription">Mobile game published by GramanDev and covered by this privacy policy.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<p>However, it may use third-party services such as Google AdMob that may collect anonymous data to show personalized ads.</p>
+    <section id="policy" class="section" aria-labelledby="policy-title">
+      <div class="policy-card">
+        <div class="policy-grid">
+          <div>
+            <p class="eyebrow" data-i18n="legalNotice">Legal Notice</p>
+            <h2 id="policy-title" class="section-title" data-i18n="pageTitle">Privacy Policy</h2>
+            <p class="policy-summary" data-i18n="policySummary">
+              GramanDev games do not collect personally identifiable information.
+              Third-party advertising services may process anonymous data to provide
+              relevant ads and improve the player experience.
+            </p>
+          </div>
+          <div class="policy-list">
+            <article class="policy-item">
+              <h3 data-i18n="personalInformation">Personal Information</h3>
+              <p data-i18n="personalInformationBody">This application does not collect personally identifiable information.</p>
+            </article>
+            <article class="policy-item">
+              <h3 data-i18n="thirdPartyServices">Third-Party Services</h3>
+              <p data-i18n="thirdPartyServicesBody">
+                The games may use third-party services such as Google AdMob that may
+                collect anonymous data to show personalized ads.
+              </p>
+            </article>
+            <article class="policy-item">
+              <h3 data-i18n="dataCollected">Data That May Be Collected</h3>
+              <ul>
+                <li data-i18n="deviceIdentifiers">Device identifiers</li>
+                <li data-i18n="usageData">Usage data</li>
+              </ul>
+            </article>
+            <article class="policy-item">
+              <h3 data-i18n="useOfData">Use Of Data</h3>
+              <p data-i18n="useOfDataBody">This data is used only to improve user experience and provide relevant advertising.</p>
+            </article>
+            <article class="policy-item">
+              <h3 data-i18n="lastUpdated">Last Updated</h3>
+              <p data-i18n="lastUpdatedDate">June 9, 2026</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<p>Collected data may include:</p>
-<ul>
-  <li>Device identifiers</li>
-  <li>Usage data</li>
-</ul>
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>GraManDev Game Studio</span>
+      <span data-i18n="footerPolicy">Privacy Policy - June 9, 2026</span>
+    </div>
+  </footer>
+  <script>
+    const translations = {
+      en: {
+        metaDescription: "Privacy policy for GramanDev mobile games, including Kitty Fusion and Claws of Honor.",
+        documentTitle: "Privacy Policy - GramanDev Game Studio",
+        brandTitle: "Privacy Center",
+        navPolicy: "Policy",
+        studioName: "GraManDev Game Studio",
+        pageTitle: "Privacy Policy",
+        heroLead: "This privacy policy applies to mobile games published by GramanDev, including Kitty Fusion and Claws of Honor.",
+        readPolicy: "Read policy",
+        viewGames: "View games",
+        studioCopy: "We build mobile games with clear privacy expectations. Our policy is written to explain what the games do, what third-party services may process, and how advertising data is used.",
+        gamesTitle: "Games Covered",
+        gameDescription: "Mobile game published by GramanDev and covered by this privacy policy.",
+        legalNotice: "Legal Notice",
+        policySummary: "GramanDev games do not collect personally identifiable information. Third-party advertising services may process anonymous data to provide relevant ads and improve the player experience.",
+        personalInformation: "Personal Information",
+        personalInformationBody: "This application does not collect personally identifiable information.",
+        thirdPartyServices: "Third-Party Services",
+        thirdPartyServicesBody: "The games may use third-party services such as Google AdMob that may collect anonymous data to show personalized ads.",
+        dataCollected: "Data That May Be Collected",
+        deviceIdentifiers: "Device identifiers",
+        usageData: "Usage data",
+        useOfData: "Use Of Data",
+        useOfDataBody: "This data is used only to improve user experience and provide relevant advertising.",
+        lastUpdated: "Last Updated",
+        lastUpdatedDate: "June 9, 2026",
+        footerPolicy: "Privacy Policy - June 9, 2026"
+      },
+      es: {
+        metaDescription: "Política de privacidad para los juegos móviles de GramanDev, incluyendo Kitty Fusion y Claws of Honor.",
+        documentTitle: "Política de Privacidad - GramanDev Game Studio",
+        brandTitle: "Centro de Privacidad",
+        navPolicy: "Política",
+        studioName: "GraManDev Game Studio",
+        pageTitle: "Política de Privacidad",
+        heroLead: "Esta política de privacidad aplica a los juegos móviles publicados por GramanDev, incluyendo Kitty Fusion y Claws of Honor.",
+        readPolicy: "Leer política",
+        viewGames: "Ver juegos",
+        studioCopy: "Creamos juegos móviles con expectativas de privacidad claras. Nuestra política explica qué hacen los juegos, qué pueden procesar los servicios de terceros y cómo se usan los datos publicitarios.",
+        gamesTitle: "Juegos Cubiertos",
+        gameDescription: "Juego móvil publicado por GramanDev y cubierto por esta política de privacidad.",
+        legalNotice: "Aviso Legal",
+        policySummary: "Los juegos de GramanDev no recopilan información de identificación personal. Los servicios publicitarios de terceros pueden procesar datos anónimos para mostrar anuncios relevantes y mejorar la experiencia del jugador.",
+        personalInformation: "Información Personal",
+        personalInformationBody: "Esta aplicación no recopila información de identificación personal.",
+        thirdPartyServices: "Servicios De Terceros",
+        thirdPartyServicesBody: "Los juegos pueden usar servicios de terceros como Google AdMob, que pueden recopilar datos anónimos para mostrar anuncios personalizados.",
+        dataCollected: "Datos Que Pueden Recopilarse",
+        deviceIdentifiers: "Identificadores del dispositivo",
+        usageData: "Datos de uso",
+        useOfData: "Uso De Los Datos",
+        useOfDataBody: "Estos datos se usan únicamente para mejorar la experiencia del usuario y proporcionar publicidad relevante.",
+        lastUpdated: "Última Actualización",
+        lastUpdatedDate: "9 de junio de 2026",
+        footerPolicy: "Política de Privacidad - 9 de junio de 2026"
+      }
+    };
 
-<p>This data is used only to improve user experience and provide relevant advertising.</p>
+    const languageSelect = document.querySelector("#language-select");
+    const metaDescription = document.querySelector("meta[name='description']");
 
-<p><strong>Last updated:</strong> June 9, 2026</p>
+    function setLanguage(language) {
+      const dictionary = translations[language] || translations.en;
+      document.documentElement.lang = language;
+      document.title = dictionary.documentTitle;
+      metaDescription.setAttribute("content", dictionary.metaDescription);
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        element.textContent = dictionary[key];
+      });
+      localStorage.setItem("preferredLanguage", language);
+    }
 
+    const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
+    languageSelect.value = savedLanguage;
+    setLanguage(savedLanguage);
+    languageSelect.addEventListener("change", (event) => setLanguage(event.target.value));
+  </script>
 </body>
 </html>
